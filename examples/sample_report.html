@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Network Audit - Sample Organization</title>
+<style>
+ body{font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+   max-width:860px;margin:0 auto;padding:40px 24px;color:#1f2937}
+ h1{font-size:26px;margin:0 0 4px} h2{font-size:18px;margin:36px 0 12px;
+   border-bottom:2px solid #e5e7eb;padding-bottom:6px}
+ h3{font-size:16px;margin:0 0 6px} h3 small{color:#9ca3af;font-weight:400}
+ article{border:1px solid #e5e7eb;border-radius:6px;padding:16px;margin:12px 0}
+ article p{margin:6px 0} ul{margin:6px 0;padding-left:22px;font-size:14px}
+ table{width:100%;border-collapse:collapse;font-size:13.5px}
+ th{text-align:left;background:#f9fafb;padding:8px;border-bottom:2px solid #e5e7eb}
+ td{padding:7px 8px;border-bottom:1px solid #f3f4f6}
+ .meta{color:#6b7280;font-size:14px}
+</style></head><body>
+<h1>Network Audit</h1>
+<p class="meta">Sample Organization &middot; organization DevNet Sandbox<br>
+Collected 2026-09-28T03:58:43+00:00 using 0 read-only API calls.</p>
+
+<h2>Summary</h2>
+<p>3 network(s), 32 device(s),
+<strong>5 finding(s)</strong> &mdash; 1 critical &middot; 2 high &middot; 1 medium &middot; 1 low.</p>
+
+<h2>Findings</h2>
+
+        <article>
+          <h3><span style="color:#7f1d1d">
+            [Critical]</span> Wireless networks broadcasting without encryption
+            <small>WLAN-01</small></h3>
+          <p>1 enabled SSID(s) accept clients with no encryption and no captive portal. Traffic is readable to anyone in range.</p>
+          <p><strong>Recommendation:</strong> Apply WPA2/WPA3, or isolate the SSID on a guest VLAN behind a splash page with client isolation enabled.</p>
+          <ul><li>HQ - San Jose / ACME-Guest</li></ul>
+        </article>
+        <article>
+          <h3><span style="color:#9a3412">
+            [High]</span> Dashboard administrators without two-factor authentication
+            <small>IAM-01</small></h3>
+          <p>2 of 5 administrator accounts can sign in with a password alone. A single credential leak grants full access.</p>
+          <p><strong>Recommendation:</strong> Enforce two-factor authentication organization-wide under Organization &gt; Settings.</p>
+          <ul><li>jdoe@acme-msp.com</li><li>contractor@gmail.com</li></ul>
+        </article>
+        <article>
+          <h3><span style="color:#9a3412">
+            [High]</span> Devices reporting offline
+            <small>OPS-01</small></h3>
+          <p>1 device(s) are not reachable. Each is either lost coverage, a failed unit, or stale inventory consuming a licence.</p>
+          <p><strong>Recommendation:</strong> Confirm whether each is decommissioned or genuinely down, and remove decommissioned units to reclaim licensing.</p>
+          <ul><li>WHN-AP-02</li></ul>
+        </article>
+        <article>
+          <h3><span style="color:#854d0e">
+            [Medium]</span> Devices in an alerting state
+            <small>OPS-02</small></h3>
+          <p>1 device(s) are online but reporting a fault.</p>
+          <p><strong>Recommendation:</strong> Review each alert in the Dashboard and resolve the condition.</p>
+          <ul><li>WHN-AP-08</li></ul>
+        </article>
+        <article>
+          <h3><span style="color:#1e40af">
+            [Low]</span> Devices without an assigned name
+            <small>DOC-01</small></h3>
+          <p>6 device(s) are identified only by serial number. During an incident this slows identification and raises the chance of changing the wrong device.</p>
+          <p><strong>Recommendation:</strong> Adopt a naming convention (site-role-number, e.g. SJO-SW-ACC-01) and apply it across the estate.</p>
+          <ul><li>Q2XX-1014-ABCD</li><li>Q2XX-1015-ABCD</li><li>Q2XX-1029-ABCD</li><li>Q2XX-1030-ABCD</li><li>Q2XX-1031-ABCD</li><li>Q2XX-1032-ABCD</li></ul>
+        </article>
+
+<h2>Device inventory</h2>
+<table><thead><tr><th>Name</th><th>Model</th><th>Serial</th><th>LAN IP</th>
+<th>Network</th><th>Firmware</th><th>Status</th></tr></thead>
+<tbody><tr><td>SJO-AP-01</td><td>MR46</td><td>Q2XX-1006-ABCD</td><td>10.10.1.6</td><td>HQ - San Jose</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>SJO-AP-02</td><td>MR46</td><td>Q2XX-1007-ABCD</td><td>10.10.1.7</td><td>HQ - San Jose</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>SJO-AP-03</td><td>MR46</td><td>Q2XX-1008-ABCD</td><td>10.10.1.8</td><td>HQ - San Jose</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>SJO-AP-04</td><td>MR46</td><td>Q2XX-1009-ABCD</td><td>10.10.1.9</td><td>HQ - San Jose</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>SJO-AP-05</td><td>MR46</td><td>Q2XX-1010-ABCD</td><td>10.10.1.10</td><td>HQ - San Jose</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>SJO-AP-06</td><td>MR46</td><td>Q2XX-1011-ABCD</td><td>10.10.1.11</td><td>HQ - San Jose</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>SJO-AP-07</td><td>MR46</td><td>Q2XX-1012-ABCD</td><td>10.10.1.12</td><td>HQ - San Jose</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>SJO-AP-08</td><td>MR46</td><td>Q2XX-1013-ABCD</td><td>10.10.1.13</td><td>HQ - San Jose</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>SJO-FW-01</td><td>MX84</td><td>Q2XX-1005-ABCD</td><td>10.10.1.5</td><td>HQ - San Jose</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>SJO-SW-ACC-01</td><td>MS250-48</td><td>Q2XX-1001-ABCD</td><td>10.10.1.1</td><td>HQ - San Jose</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>SJO-SW-ACC-02</td><td>MS250-48</td><td>Q2XX-1002-ABCD</td><td>10.10.1.2</td><td>HQ - San Jose</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>SJO-SW-ACC-03</td><td>MS250-48</td><td>Q2XX-1003-ABCD</td><td>10.10.1.3</td><td>HQ - San Jose</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>SJO-SW-ACC-04</td><td>MS250-48</td><td>Q2XX-1004-ABCD</td><td>10.10.1.4</td><td>HQ - San Jose</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>-</td><td>MS425-16</td><td>Q2XX-1014-ABCD</td><td>10.10.1.14</td><td>DC - Warehouse North</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>-</td><td>MS425-16</td><td>Q2XX-1015-ABCD</td><td>10.10.1.15</td><td>DC - Warehouse North</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>WHN-AP-01</td><td>MR36</td><td>Q2XX-1016-ABCD</td><td>10.10.1.16</td><td>DC - Warehouse North</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>WHN-AP-02</td><td>MR36</td><td>Q2XX-1017-ABCD</td><td>10.10.1.17</td><td>DC - Warehouse North</td><td>wireless-29-5-1</td><td>offline</td></tr><tr><td>WHN-AP-03</td><td>MR36</td><td>Q2XX-1018-ABCD</td><td>10.10.1.18</td><td>DC - Warehouse North</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>WHN-AP-04</td><td>MR36</td><td>Q2XX-1019-ABCD</td><td>10.10.1.19</td><td>DC - Warehouse North</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>WHN-AP-05</td><td>MR36</td><td>Q2XX-1020-ABCD</td><td>10.10.1.20</td><td>DC - Warehouse North</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>WHN-AP-06</td><td>MR36</td><td>Q2XX-1021-ABCD</td><td>10.10.1.21</td><td>DC - Warehouse North</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>WHN-AP-07</td><td>MR36</td><td>Q2XX-1022-ABCD</td><td>10.10.1.22</td><td>DC - Warehouse North</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>WHN-AP-08</td><td>MR36</td><td>Q2XX-1023-ABCD</td><td>10.10.1.23</td><td>DC - Warehouse North</td><td>wireless-29-5-1</td><td>alerting</td></tr><tr><td>WHN-AP-09</td><td>MR36</td><td>Q2XX-1024-ABCD</td><td>10.10.1.24</td><td>DC - Warehouse North</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>WHN-AP-10</td><td>MR36</td><td>Q2XX-1025-ABCD</td><td>10.10.1.25</td><td>DC - Warehouse North</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>WHN-AP-11</td><td>MR36</td><td>Q2XX-1026-ABCD</td><td>10.10.1.26</td><td>DC - Warehouse North</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>WHN-AP-12</td><td>MR36</td><td>Q2XX-1027-ABCD</td><td>10.10.1.27</td><td>DC - Warehouse North</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>-</td><td>MR36</td><td>Q2XX-1029-ABCD</td><td>10.10.1.29</td><td>Branch - Cartago</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>-</td><td>MR36</td><td>Q2XX-1030-ABCD</td><td>10.10.1.30</td><td>Branch - Cartago</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>-</td><td>MR36</td><td>Q2XX-1031-ABCD</td><td>10.10.1.31</td><td>Branch - Cartago</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>-</td><td>MR36</td><td>Q2XX-1032-ABCD</td><td>10.10.1.32</td><td>Branch - Cartago</td><td>wireless-29-5-1</td><td>online</td></tr><tr><td>CAR-FW-01</td><td>MX67</td><td>Q2XX-1028-ABCD</td><td>10.10.1.28</td><td>Branch - Cartago</td><td>wireless-29-5-1</td><td>online</td></tr></tbody></table>
+</body></html>
